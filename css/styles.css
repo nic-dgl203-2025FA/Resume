@@ -1,39 +1,1335 @@
-/*
-COLOR PALETTE
 
-Dark green    #3c8453
-Sandy beige   #bcaa96
-Dark gray     #222222
-Light gray    #d3d4d6
-Off-white     #f6f6f6
-*/
+/* =========================================
+   GLOBAL STYLES
+========================================= */
 
-/* GLOBAL STYLES 
-------------------------------------*/
-body {
-    background: #f6f6f6; 
+:root {
+  --font-body: "Open Sans", sans-serif;
+  --font-heading: "Caveat", cursive;
+
+  --neutral: oklch(50% 0.02 150);
+  --neutral-1: oklch(from var(--neutral) 98% c h);
+  --neutral-2: oklch(from var(--neutral) 90% c h);
+  --neutral-3: oklch(from var(--neutral) 80% c h);
+  --neutral-4: oklch(from var(--neutral) 70% c h);
+  --neutral-5: oklch(from var(--neutral) 60% c h);
+  --neutral-6: oklch(from var(--neutral) 50% c h);
+  --neutral-7: oklch(from var(--neutral) 40% c h);
+  --neutral-8: oklch(from var(--neutral) 30% c h);
+  --neutral-9: oklch(from var(--neutral) 20% c h);
+
+  --accent-green: oklch(56% 0.11 150);
+  --accent-beige: oklch(75% 0.04 70);
+
+  --button-transition: 0.25s ease;
+  --button-shadow: 0 0.4rem 0.9rem rgb(0 0 0 / 0.18);
+  --nav-transition: 0.3s ease;
+  --logo-animation-duration: 1s;
+
+  /* Animation durations */
+  --filter-animation-duration: 4s;
+  --blend-animation-duration: 5s;
 }
 
+html {
+  box-sizing: border-box;
+}
 
-/* HOME
-------------------------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
+html,
+body {
+  min-block-size: 100%;
+}
 
-/* RESUME
-------------------------------------*/
+body {
+  margin: 0;
+  background: var(--neutral-1);
+  color: var(--neutral-9);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
 
-/* Profile
-------------------------------------*/
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  margin: 0;
+}
 
-/* Projects
-------------------------------------*/
+h1 {
+  font-size: 4.375rem;
+  line-height: 0.95;
+}
 
-/* Work Experience
-------------------------------------*/
+h2 {
+  font-size: 2.25rem;
+}
 
-/* Education
-------------------------------------*/
+h3 {
+  font-size: 1.5rem;
+}
 
+a {
+  color: var(--accent-green);
+}
 
-/* FOOTER
-------------------------------------*/
+a:hover {
+  color: var(--accent-beige);
+  text-decoration: none;
+}
+
+/* =========================================
+   BUTTON STYLES
+========================================= */
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  background: var(--accent-green);
+  color: var(--neutral-1);
+  border: 0;
+  border-radius: 0.25rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  transition:
+    background-color var(--button-transition),
+    color var(--button-transition),
+    transform var(--button-transition),
+    box-shadow var(--button-transition);
+}
+
+.btn:hover {
+  background: var(--neutral-8);
+  color: var(--neutral-1);
+  transform: translateY(-0.1875rem);
+  box-shadow: var(--button-shadow);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn:focus-visible {
+  outline: 0.1875rem solid var(--accent-beige);
+  outline-offset: 0.1875rem;
+}
+
+/* =========================================
+   CONTENT WRAPPER
+========================================= */
+
+.content-wrapper {
+  inline-size: 100%;
+  max-inline-size: 56.25rem;
+  margin-inline: auto;
+  padding: 1.25rem;
+}
+
+/* =========================================
+   HOME PAGE
+========================================= */
+
+.home {
+  min-block-size: 100vh;
+  background: url("../images/karam.jpg") no-repeat center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.home > .content-wrapper {
+  flex: 1 0 auto;
+  inline-size: 100%;
+  padding: 0.625rem;
+}
+
+.content-bg {
+  padding: 1.25rem;
+  background: rgb(255 255 255 / 0.88);
+  border-radius: 0.5rem;
+}
+
+/* =========================================
+   RESUME PAGE
+========================================= */
+
+.resume .page-header::before {
+  content: "";
+  display: block;
+  block-size: 12.5rem;
+  background: url("../images/karam.jpg") center / cover;
+}
+
+.resume h1 {
+  font-size: 3.125rem;
+}
+
+.resume h2 {
+  font-size: 1.625rem;
+}
+
+.resume-section {
+  margin-block-end: 3.125rem;
+}
+
+.resume-section > h2 {
+  border-block-end: 0.125rem dashed var(--neutral-3);
+  padding-block-end: 0.3125rem;
+}
+
+/* =========================================
+   DOWNLOAD BUTTON
+========================================= */
+
+.download-link {
+  display: inline-block;
+  position: relative;
+  margin-block-start: 1rem;
+  margin-inline-start: 1.25rem;
+  font-size: 0.9375rem;
+}
+
+/* =========================================
+   RESUME PROJECTS
+========================================= */
+
+.project-item {
+  margin-block: 1.875rem;
+}
+
+.project-item img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  margin-block-end: 0.625rem;
+  object-fit: cover;
+}
+
+/* =========================================
+   WORK EXPERIENCE
+========================================= */
+
+.work-item {
+  margin-block: 1.875rem;
+}
+
+.work-details p {
+  margin: 0;
+}
+
+.work-summary p:first-child {
+  margin-block-start: 0;
+}
+
+/* =========================================
+   EDUCATION
+========================================= */
+
+.education-item {
+  margin-block: 1.875rem;
+}
+
+.education-item p {
+  margin: 0;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  background: var(--neutral-9);
+  color: var(--neutral-3);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+  padding-inline: 1.25rem;
+}
+
+footer a {
+  color: var(--accent-beige);
+}
+
+footer a:hover {
+  color: var(--accent-green);
+}
+
+.socials {
+  list-style: none;
+  padding: 0;
+}
+
+.socials li {
+  display: inline-block;
+  margin-inline: 0.3125rem;
+}
+
+.socials img {
+  inline-size: 2rem;
+  block-size: 2rem;
+
+  transition:
+    opacity var(--button-transition),
+    transform var(--button-transition);
+}
+
+.socials img:hover {
+  opacity: 0.6;
+  transform: translateY(-0.125rem);
+}
+
+/* =========================================
+   PROJECTS PAGE - SUBGRID
+========================================= */
+
+.projects-page .project-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: auto;
+  column-gap: 1.5rem;
+  row-gap: 0;
+}
+
+.projects-page .project-item {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  min-inline-size: 0;
+  margin: 0;
+  margin-block-end: 1.5rem;
+  padding: 1rem;
+  background: var(--neutral-2);
+  border-radius: 0.5rem;
+}
+
+.projects-page .project-item img {
+  display: block;
+  grid-row: 1;
+  inline-size: 100%;
+  block-size: 10rem;
+  object-fit: cover;
+  margin: 0;
+}
+
+.projects-page .project-item h3 {
+  grid-row: 2;
+  margin: 0;
+}
+
+.projects-page .project-item p {
+  grid-row: 3;
+  margin: 0;
+}
+
+.projects-page .project-item:not(:has(img)) h3 {
+  grid-row: 2;
+}
+
+.projects-page .project-item:not(:has(img)) p {
+  grid-row: 3;
+}
+
+/* =========================================
+   NAVIGATION - MOBILE FIRST
+========================================= */
+
+.site-nav {
+  background: var(--neutral-2);
+  position: relative;
+  z-index: 10;
+}
+
+.nav-inner {
+  max-inline-size: 68.75rem;
+  margin-inline: auto;
+  padding-block: 0.9375rem;
+  padding-inline: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================================
+   KS LOGO - PAGE LOAD ANIMATION
+========================================= */
+
+.site-logo {
+  display: inline-block;
+  color: var(--accent-green);
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: bold;
+  line-height: 1;
+  text-decoration: none;
+  transform-origin: center;
+
+  animation:
+    logoEntrance
+    var(--logo-animation-duration)
+    ease-out
+    both;
+
+  transition:
+    color var(--nav-transition),
+    transform var(--nav-transition),
+    text-shadow var(--nav-transition);
+}
+
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform:
+      translateY(-1rem)
+      scale(0.6)
+      rotate(-15deg);
+  }
+
+  60% {
+    opacity: 1;
+    transform:
+      translateY(0.125rem)
+      scale(1.1)
+      rotate(5deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1)
+      rotate(0);
+  }
+}
+
+.site-logo:hover {
+  color: var(--neutral-8);
+  transform: scale(1.12) rotate(-5deg);
+  text-shadow:
+    0.125rem 0.125rem 0.25rem
+    rgb(0 0 0 / 0.15);
+}
+
+.site-logo:focus-visible {
+  outline: 0.1875rem solid var(--accent-green);
+  outline-offset: 0.25rem;
+}
+
+/* =========================================
+   HAMBURGER MENU
+========================================= */
+
+.nav-toggle {
+  position: absolute;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  inset-inline-end: 1.25rem;
+  inset-block-start: 0.625rem;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-toggle-label {
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: var(--accent-green);
+  inline-size: 1.625rem;
+  block-size: 0.1875rem;
+  border-radius: 0.125rem;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+}
+
+.nav-toggle-label span::before {
+  inset-block-start: -0.5rem;
+}
+
+.nav-toggle-label span::after {
+  inset-block-start: 0.5rem;
+}
+
+.nav-links {
+  display: none;
+  flex-basis: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding-block-start: 0.9375rem;
+  padding-inline: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+/* =========================================
+   NAVIGATION LINK HOVER EFFECTS
+========================================= */
+
+.nav-links a {
+  display: inline-block;
+  position: relative;
+  color: var(--neutral-9);
+  text-decoration: none;
+  font-weight: 600;
+  padding-block: 0.375rem;
+  padding-inline: 0;
+
+  transition:
+    color var(--nav-transition),
+    transform var(--nav-transition);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+  inline-size: 100%;
+  block-size: 0.125rem;
+  background: var(--accent-green);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--nav-transition);
+}
+
+.nav-links a:hover {
+  color: var(--accent-green);
+  transform: translateY(-0.125rem);
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.nav-links a:focus-visible {
+  outline: 0.1875rem solid var(--accent-green);
+  outline-offset: 0.25rem;
+}
+
+.nav-links .nav-active {
+  color: var(--accent-green);
+  text-decoration: underline;
+  text-underline-offset: 0.3125rem;
+}
+
+.nav-links .nav-active::after {
+  transform: scaleX(0);
+}
+
+.nav-links .nav-active:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+.nav-toggle:checked ~ .nav-links {
+  display: flex;
+}
+
+.nav-toggle:checked + .nav-toggle-label span {
+  background: transparent;
+}
+
+.nav-toggle:checked + .nav-toggle-label span::before {
+  inset-block-start: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle:checked + .nav-toggle-label span::after {
+  inset-block-start: 0;
+  transform: rotate(-45deg);
+}
+
+/* =========================================
+   CONTACT NAVIGATION BUTTON
+========================================= */
+
+.nav-links .nav-contact {
+  background: var(--accent-green);
+  color: var(--neutral-1);
+  padding-block: 0.625rem;
+  padding-inline: 0.9375rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+}
+
+.nav-links .nav-contact:hover {
+  background: var(--neutral-8);
+  color: var(--neutral-1);
+}
+
+.site-logo.nav-active {
+  text-decoration: underline;
+  text-underline-offset: 0.3125rem;
+}
+
+.contact-btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  anchor-name: --contact-button;
+}
+
+.contact-btn:hover {
+  background: var(--neutral-8);
+  color: var(--neutral-1);
+}
+
+.contact-btn:focus-visible {
+  outline: 0.1875rem solid var(--accent-beige);
+  outline-offset: 0.1875rem;
+}
+
+/* =========================================
+   CONTACT POPOVER
+========================================= */
+
+#contact-popover {
+  box-sizing: border-box;
+
+  inline-size: min(100vi, max(33vi, 26rem));
+  container-type: inline-size;
+
+  resize: horizontal;
+  overflow: auto;
+  direction: rtl;
+
+  min-inline-size: min(100vi, 18rem);
+  max-inline-size: 100vi;
+  max-block-size: 85vh;
+
+  position: fixed;
+  position-anchor: --contact-button;
+  position-area: bottom span-left;
+  position-try-fallbacks: flip-inline, flip-block;
+
+  inset: auto;
+  margin: 0;
+
+  padding: 1.25rem;
+  border: 0.125rem solid var(--accent-green);
+  border-radius: 0.625rem;
+  border-end-end-radius: 0;
+
+  background: var(--neutral-1);
+  color: var(--neutral-9);
+
+  box-shadow:
+    0 0.75rem 2.1875rem
+    rgb(0 0 0 / 0.25);
+}
+
+#contact-popover::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+
+/* =========================================
+   CONTACT CARD
+========================================= */
+
+.contact-card {
+  direction: ltr;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.9375rem;
+  align-items: start;
+}
+
+.contact-photo {
+  display: block;
+  inline-size: 100%;
+  max-block-size: 13.75rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.contact-info {
+  min-inline-size: 0;
+}
+
+.contact-info h2 {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  line-height: 1.1;
+  margin-block: 0 0.625rem;
+  border: none;
+}
+
+.contact-role {
+  font-weight: bold;
+  color: var(--accent-green);
+  margin-block: 0 0.625rem;
+}
+
+.contact-bio {
+  display: block;
+  margin-block: 0 0.625rem;
+}
+
+.contact-email,
+.contact-phone {
+  margin-block: 0.5rem;
+  overflow-wrap: anywhere;
+}
+
+.contact-info a {
+  color: var(--accent-green);
+}
+
+.contact-info a:hover {
+  color: var(--neutral-8);
+}
+
+/* =========================================
+   CONTACT CLOSE BUTTON
+========================================= */
+
+.contact-close {
+  background: var(--accent-green);
+  color: var(--neutral-1);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.3125rem;
+  padding-block: 0.625rem;
+  padding-inline: 1.25rem;
+  cursor: pointer;
+  justify-self: start;
+
+  transition:
+    background-color var(--button-transition),
+    color var(--button-transition),
+    transform var(--button-transition),
+    box-shadow var(--button-transition);
+}
+
+.contact-close:hover {
+  background: var(--neutral-8);
+  color: var(--neutral-1);
+  transform: translateY(-0.1875rem);
+  box-shadow: var(--button-shadow);
+}
+
+.contact-close:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.contact-close:focus-visible {
+  outline: 0.1875rem solid var(--accent-beige);
+  outline-offset: 0.1875rem;
+}
+
+/* =========================================
+   CONTACT CONTAINER QUERIES
+========================================= */
+
+@container (min-width: 24rem) {
+  .contact-card {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 2fr);
+    gap: 0.9375rem;
+  }
+
+  .contact-photo {
+    grid-column: 1;
+    grid-row: 1;
+    max-block-size: none;
+  }
+
+  .contact-info {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .contact-bio {
+    display: none;
+  }
+
+  .contact-close {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+@container (min-width: 28rem) {
+  .contact-card {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 2fr);
+    gap: 1.25rem;
+  }
+
+  .contact-bio {
+    display: block;
+  }
+}
+
+/* =========================================
+   COMMIT 7 - ANIMATION SHOWCASE GRID
+========================================= */
+
+.animations-page .animation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  margin-block-start: 1.5rem;
+}
+
+.animations-page .animation-card {
+  min-inline-size: 0;
+  padding: 1.25rem;
+  background: var(--neutral-2);
+  border-radius: 0.625rem;
+}
+
+.animations-page .animation-card h3 {
+  margin-block-end: 0.75rem;
+}
+
+.animations-page .animation-card p {
+  margin-block: 0.875rem;
+}
+
+.animations-page .animation-technique {
+  font-weight: 700;
+  color: var(--accent-green);
+}
+
+.animations-page .animation-back {
+  margin-block-start: 2rem;
+}
+
+.animations-page .animation-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  inline-size: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--neutral-1);
+  border-radius: 0.625rem;
+}
+
+/* =========================================
+   COMMIT 8 - CLIP-PATH ANIMATION
+========================================= */
+
+.animations-page .clip-shape {
+  inline-size: 55%;
+  aspect-ratio: 1 / 1;
+  background: var(--accent-green);
+
+  animation:
+    morphClip
+    3.5s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes morphClip {
+  0% {
+    clip-path: polygon(
+      50% 0%,
+      100% 100%,
+      0% 100%
+    );
+
+    transform: rotate(0deg);
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%
+    );
+
+    transform: rotate(45deg);
+  }
+
+  100% {
+    clip-path: polygon(
+      50% 0%,
+      100% 50%,
+      50% 100%,
+      0% 50%
+    );
+
+    transform: rotate(0deg);
+  }
+}
+
+/* =========================================
+   COMMIT 9 - CSS FILTER ANIMATION
+========================================= */
+
+.animations-page .filter-stage {
+  background:
+    radial-gradient(
+      circle,
+      var(--neutral-1),
+      var(--neutral-2)
+    );
+}
+
+.animations-page .filter-shape {
+  inline-size: 55%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      var(--accent-beige),
+      var(--accent-green) 55%,
+      var(--neutral-8)
+    );
+
+  box-shadow:
+    0 0 1rem rgb(0 0 0 / 0.12);
+
+  animation:
+    filterPulse
+    var(--filter-animation-duration)
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes filterPulse {
+  0% {
+    filter:
+      hue-rotate(0deg)
+      blur(0rem)
+      brightness(1)
+      saturate(1);
+
+    transform:
+      scale(0.8)
+      rotate(0deg);
+  }
+
+  25% {
+    filter:
+      hue-rotate(70deg)
+      blur(0.125rem)
+      brightness(1.25)
+      saturate(1.4);
+
+    transform:
+      scale(1)
+      rotate(90deg);
+  }
+
+  50% {
+    filter:
+      hue-rotate(150deg)
+      blur(0.25rem)
+      brightness(1.5)
+      saturate(1.7);
+
+    transform:
+      scale(1.12)
+      rotate(180deg);
+  }
+
+  75% {
+    filter:
+      hue-rotate(240deg)
+      blur(0.125rem)
+      brightness(1.2)
+      saturate(1.5);
+
+    transform:
+      scale(1)
+      rotate(270deg);
+  }
+
+  100% {
+    filter:
+      hue-rotate(360deg)
+      blur(0rem)
+      brightness(1)
+      saturate(1);
+
+    transform:
+      scale(0.8)
+      rotate(360deg);
+  }
+}
+
+/* =========================================
+   COMMIT 10 - BLEND MODE ANIMATION
+========================================= */
+
+/* Keep circles inside the animation card */
+
+.animations-page .blend-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle,
+      var(--neutral-1),
+      var(--neutral-2)
+    );
+}
+
+/* Shared circle styles */
+
+.animations-page .blend-shape {
+  position: absolute;
+  inline-size: 38%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  opacity: 0.85;
+
+  mix-blend-mode: multiply;
+
+  will-change: transform;
+}
+
+/* First green circle */
+
+.animations-page .blend-one {
+  background: var(--accent-green);
+
+  animation:
+    blendMoveOne
+    var(--blend-animation-duration)
+    ease-in-out
+    infinite
+    alternate;
+}
+
+/* Second beige circle */
+
+.animations-page .blend-two {
+  background: var(--accent-beige);
+
+  animation:
+    blendMoveTwo
+    var(--blend-animation-duration)
+    ease-in-out
+    infinite
+    alternate;
+}
+
+/* Third grey-green circle */
+
+.animations-page .blend-three {
+  background: var(--neutral-5);
+
+  animation:
+    blendMoveThree
+    var(--blend-animation-duration)
+    ease-in-out
+    infinite
+    alternate;
+}
+
+/* Circle one moves left to right */
+
+@keyframes blendMoveOne {
+  0% {
+    transform:
+      translate(-45%, -10%)
+      scale(0.9);
+  }
+
+  50% {
+    transform:
+      translate(10%, 10%)
+      scale(1.15);
+  }
+
+  100% {
+    transform:
+      translate(45%, -15%)
+      scale(0.9);
+  }
+}
+
+/* Circle two moves right to left */
+
+@keyframes blendMoveTwo {
+  0% {
+    transform:
+      translate(45%, -10%)
+      scale(0.9);
+  }
+
+  50% {
+    transform:
+      translate(-10%, -15%)
+      scale(1.1);
+  }
+
+  100% {
+    transform:
+      translate(-45%, 15%)
+      scale(0.9);
+  }
+}
+
+/* Circle three moves vertically */
+
+@keyframes blendMoveThree {
+  0% {
+    transform:
+      translate(0%, 45%)
+      scale(0.85);
+  }
+
+  50% {
+    transform:
+      translate(0%, -35%)
+      scale(1.1);
+  }
+
+  100% {
+    transform:
+      translate(0%, 35%)
+      scale(0.85);
+  }
+}
+
+/* =========================================
+   RESPONSIVE STYLES - MOBILE FIRST
+========================================= */
+
+@media screen and (min-width: 31.25rem) {
+  .home > .content-wrapper {
+    padding: 1.875rem;
+  }
+
+  .resume .page-header::before {
+    block-size: 23.4375rem;
+  }
+
+  .resume h1 {
+    font-size: 4.375rem;
+  }
+
+  .resume h2 {
+    font-size: 2.25rem;
+  }
+
+  .project-item img {
+    inline-size: 18.75rem;
+  }
+}
+
+@media screen and (min-width: 37.5rem) {
+  .projects-page .project-wrapper {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 40.625rem) {
+  .project-wrapper:not(.projects-page .project-wrapper) {
+    display: grid;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .project-wrapper:not(.projects-page .project-wrapper)
+  .project-item img {
+    inline-size: 100%;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .nav-inner {
+    flex-wrap: nowrap;
+    gap: 2rem;
+    padding-block: 0.9375rem;
+    padding-inline: 1.875rem;
+  }
+
+  .site-logo {
+    flex-shrink: 0;
+  }
+
+  .nav-toggle,
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2.5rem;
+    padding: 0;
+    margin: 0;
+    margin-inline-start: auto;
+  }
+
+  .nav-links a {
+    padding-block: 0.3125rem;
+    padding-inline: 0;
+  }
+
+  .nav-links .nav-contact {
+    padding-block: 0.625rem;
+    padding-inline: 0.9375rem;
+  }
+
+  /* Three animation columns on desktop */
+
+  .animations-page .animation-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 53.75rem) {
+  .work-item {
+    display: grid;
+    grid-template-columns:
+      18.75rem minmax(0, 1fr);
+    column-gap: 1.25rem;
+  }
+
+  footer {
+    flex-direction: row;
+    align-items: center;
+    text-align: start;
+  }
+
+  .socials li {
+    margin-inline: 0 0.625rem;
+  }
+}
+
+@media screen and (min-width: 56.25rem) {
+  .projects-page .content-wrapper {
+    max-inline-size: 68.75rem;
+  }
+
+  .projects-page .project-wrapper {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY - REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .contact-close,
+  .socials img,
+  .site-logo,
+  .nav-links a,
+  .nav-links a::after {
+    transition: none;
+  }
+
+  .site-logo {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .btn:hover,
+  .contact-close:hover,
+  .socials img:hover,
+  .site-logo:hover,
+  .nav-links a:hover {
+    transform: none;
+  }
+
+  .animations-page .clip-shape {
+    animation: none;
+
+    clip-path: polygon(
+      50% 0%,
+      100% 50%,
+      50% 100%,
+      0% 50%
+    );
+
+    transform: none;
+  }
+
+  .animations-page .filter-shape {
+    animation: none;
+    filter: none;
+    transform: none;
+  }
+
+  .animations-page .blend-shape {
+    animation: none;
+    will-change: auto;
+  }
+
+  .animations-page .blend-one {
+    transform: translate(-35%, -10%);
+  }
+
+  .animations-page .blend-two {
+    transform: translate(35%, -10%);
+  }
+
+  .animations-page .blend-three {
+    transform: translateY(35%);
+  }
+}
