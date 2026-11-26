@@ -1,0 +1,532 @@
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  id="study-desk"
+  class="study-desk"
+  viewBox="0 0 800 500"
+  width="800"
+  height="500"
+  role="img"
+  aria-labelledby="desk-title desk-description"
+>
+
+  <title id="desk-title">
+    A Breezy Study Desk
+  </title>
+
+  <desc id="desk-description">
+    A study desk with a table fan, notebook,
+    books, coffee cup, plant and window.
+  </desc>
+
+  <style>
+    #study-desk {
+      --room-colour: oklch(95% 0.012 105);
+      --window-frame-colour: oklch(70% 0.035 150);
+      --window-glass-colour: oklch(92% 0.018 150);
+      --sun-colour: oklch(84% 0.085 85);
+
+      --table-colour: oklch(67% 0.065 75);
+      --table-leg-colour: oklch(53% 0.05 70);
+
+      --fan-stand-colour: oklch(65% 0.045 150);
+      --fan-frame-colour: oklch(54% 0.05 150);
+      --fan-ring-colour: oklch(87% 0.025 140);
+      --fan-inner-colour: oklch(93% 0.015 135);
+      --fan-blade-colour: oklch(68% 0.05 150);
+      --fan-centre-colour: oklch(49% 0.055 150);
+
+      --airflow-colour: oklch(67% 0.04 165);
+
+      --bottom-book-colour: oklch(64% 0.04 155);
+      --middle-book-colour: oklch(79% 0.065 80);
+      --top-book-colour: oklch(76% 0.028 145);
+      --book-line-colour: oklch(95% 0.025 90);
+
+      --notebook-cover-colour: oklch(55% 0.045 150);
+      --paper-colour: oklch(99% 0.012 95);
+      --paper-shadow-colour: oklch(90% 0.028 95);
+      --paper-border-colour: oklch(79% 0.025 95);
+
+      --pen-colour: oklch(51% 0.045 155);
+      --pen-tip-colour: oklch(75% 0.07 80);
+
+      --cup-shadow-colour: oklch(79% 0.04 85);
+      --cup-colour: oklch(76% 0.035 140);
+      --cup-border-colour: oklch(64% 0.045 150);
+      --coffee-colour: oklch(50% 0.05 65);
+      --steam-colour: oklch(75% 0.025 150);
+
+      --plant-pot-colour: oklch(70% 0.055 75);
+      --leaf-one-colour: oklch(62% 0.055 145);
+      --leaf-two-colour: oklch(69% 0.055 145);
+      --leaf-three-colour: oklch(55% 0.06 150);
+    }
+  </style>
+
+
+  <!-- Room -->
+
+  <g id="room">
+
+    <rect
+      id="room-background"
+      x="0"
+      y="0"
+      width="800"
+      height="500"
+      rx="12"
+      fill="var(--room-colour)"
+    />
+
+  </g>
+
+
+  <!-- Window -->
+
+  <g id="window">
+
+    <rect
+      id="window-frame"
+      x="530"
+      y="45"
+      width="170"
+      height="180"
+      rx="5"
+      fill="var(--window-frame-colour)"
+    />
+
+    <rect
+      id="window-glass"
+      x="540"
+      y="55"
+      width="150"
+      height="160"
+      fill="var(--window-glass-colour)"
+    />
+
+    <circle
+      id="window-sun"
+      cx="650"
+      cy="90"
+      r="25"
+      fill="var(--sun-colour)"
+    />
+
+    <path
+      id="window-divider"
+      d="M540 135 H690 M615 55 V215"
+      stroke="var(--window-frame-colour)"
+      stroke-width="7"
+      fill="none"
+    />
+
+  </g>
+
+
+  <!-- Study Table -->
+
+  <g id="study-table">
+
+    <rect
+      id="table-top"
+      x="60"
+      y="355"
+      width="680"
+      height="22"
+      rx="4"
+      fill="var(--table-colour)"
+    />
+
+    <rect
+      id="table-leg-left"
+      x="95"
+      y="377"
+      width="22"
+      height="90"
+      fill="var(--table-leg-colour)"
+    />
+
+    <rect
+      id="table-leg-right"
+      x="683"
+      y="377"
+      width="22"
+      height="90"
+      fill="var(--table-leg-colour)"
+    />
+
+  </g>
+
+
+  <!-- Table Fan -->
+
+  <g id="table-fan">
+
+    <g id="fan-stand">
+
+      <rect
+        id="fan-neck"
+        x="176"
+        y="212"
+        width="18"
+        height="135"
+        rx="7"
+        fill="var(--fan-stand-colour)"
+      />
+
+      <ellipse
+        id="fan-base"
+        cx="185"
+        cy="347"
+        rx="65"
+        ry="8"
+        fill="var(--fan-frame-colour)"
+      />
+
+    </g>
+
+    <g id="fan-frame">
+
+      <circle
+        id="fan-outer-ring"
+        cx="185"
+        cy="155"
+        r="90"
+        fill="var(--fan-ring-colour)"
+        stroke="var(--fan-frame-colour)"
+        stroke-width="6"
+      />
+
+      <circle
+        id="fan-inner-ring"
+        cx="185"
+        cy="155"
+        r="78"
+        fill="var(--fan-inner-colour)"
+      />
+
+    </g>
+
+    <g
+      id="fan-blades"
+      fill="var(--fan-blade-colour)"
+    >
+
+      <path
+        id="blade-one"
+        d="M185 155 C140 91 181 75 206 95 C222 115 205 139 185 155 Z"
+      />
+
+      <path
+        id="blade-two"
+        d="M185 155 C140 91 181 75 206 95 C222 115 205 139 185 155 Z"
+        transform="rotate(90 185 155)"
+      />
+
+      <path
+        id="blade-three"
+        d="M185 155 C140 91 181 75 206 95 C222 115 205 139 185 155 Z"
+        transform="rotate(180 185 155)"
+      />
+
+      <path
+        id="blade-four"
+        d="M185 155 C140 91 181 75 206 95 C222 115 205 139 185 155 Z"
+        transform="rotate(270 185 155)"
+      />
+
+    </g>
+
+    <circle
+      id="fan-centre"
+      cx="185"
+      cy="155"
+      r="15"
+      fill="var(--fan-centre-colour)"
+    />
+
+  </g>
+
+
+  <!-- Airflow -->
+
+  <g
+    id="airflow"
+    fill="none"
+    stroke="var(--airflow-colour)"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-dasharray="12 8"
+  >
+
+    <path
+      id="wind-one"
+      d="M284 125 Q350 103 410 145"
+    />
+
+    <path
+      id="wind-two"
+      d="M285 165 Q366 145 430 190"
+    />
+
+    <path
+      id="wind-three"
+      d="M275 205 Q340 200 390 240"
+    />
+
+  </g>
+
+
+  <!-- Books -->
+
+  <g id="books">
+
+    <rect
+      id="bottom-book"
+      x="85"
+      y="335"
+      width="130"
+      height="20"
+      rx="3"
+      fill="var(--bottom-book-colour)"
+    />
+
+    <rect
+      id="middle-book"
+      x="95"
+      y="315"
+      width="125"
+      height="19"
+      rx="3"
+      fill="var(--middle-book-colour)"
+    />
+
+    <rect
+      id="top-book"
+      x="80"
+      y="295"
+      width="130"
+      height="19"
+      rx="3"
+      fill="var(--top-book-colour)"
+    />
+
+    <g
+      id="book-page-lines"
+      stroke="var(--book-line-colour)"
+      stroke-width="3"
+      fill="none"
+    >
+
+      <path
+        id="top-book-line"
+        d="M110 305 H200"
+      />
+
+      <path
+        id="middle-book-line"
+        d="M125 324 H210"
+      />
+
+      <path
+        id="bottom-book-line"
+        d="M115 345 H205"
+      />
+
+    </g>
+
+  </g>
+
+
+  <!-- Notebook -->
+
+  <g id="notebook">
+
+    <path
+      id="notebook-cover"
+      d="M310 325 L410 300 L510 330 L410 355 Z"
+      fill="var(--notebook-cover-colour)"
+    />
+
+    <path
+      id="notebook-base"
+      d="M315 317 L410 290 L505 320 L410 346 Z"
+      fill="var(--paper-colour)"
+      stroke="var(--paper-border-colour)"
+      stroke-width="2"
+    />
+
+    <g id="moving-pages">
+
+      <path
+        id="notebook-page-one"
+        d="M410 346 L410 290 Q470 242 505 280 L505 320 Z"
+        fill="var(--paper-shadow-colour)"
+        stroke="var(--paper-border-colour)"
+        stroke-width="2"
+      />
+
+      <path
+        id="notebook-page-two"
+        d="M410 346 L410 290 Q445 215 485 240 Q470 284 505 320 Z"
+        fill="var(--paper-colour)"
+        stroke="var(--paper-border-colour)"
+        stroke-width="2"
+      />
+
+    </g>
+
+    <g
+      id="notebook-lines"
+      stroke="var(--top-book-colour)"
+      stroke-width="2"
+      fill="none"
+    >
+
+      <path
+        id="notebook-fold"
+        d="M409 291 V345"
+      />
+
+      <path
+        id="writing-line-one"
+        d="M336 319 L390 304"
+      />
+
+      <path
+        id="writing-line-two"
+        d="M345 328 L397 312"
+      />
+
+      <path
+        id="writing-line-three"
+        d="M369 335 L399 325"
+      />
+
+    </g>
+
+  </g>
+
+
+  <!-- Pen -->
+
+  <g id="pen">
+
+    <path
+      id="pen-body"
+      d="M465 346 L526 330"
+      stroke="var(--pen-colour)"
+      stroke-width="7"
+      stroke-linecap="round"
+    />
+
+    <path
+      id="pen-tip"
+      d="M526 330 L537 327"
+      stroke="var(--pen-tip-colour)"
+      stroke-width="3"
+    />
+
+  </g>
+
+
+  <!-- Coffee Cup -->
+
+  <g id="coffee-cup">
+
+    <ellipse
+      id="cup-shadow"
+      cx="580"
+      cy="350"
+      rx="45"
+      ry="5"
+      fill="var(--cup-shadow-colour)"
+    />
+
+    <path
+      id="cup-body"
+      d="M550 293 H610 L602 346 H558 Z"
+      fill="var(--cup-colour)"
+      stroke="var(--cup-border-colour)"
+      stroke-width="2"
+    />
+
+    <ellipse
+      id="coffee-surface"
+      cx="580"
+      cy="293"
+      rx="30"
+      ry="7"
+      fill="var(--coffee-colour)"
+    />
+
+    <path
+      id="cup-handle"
+      d="M610 302 C641 291 642 333 605 329"
+      stroke="var(--cup-border-colour)"
+      stroke-width="6"
+      fill="none"
+    />
+
+  </g>
+
+
+  <!-- Coffee Steam -->
+
+  <g
+    id="coffee-steam"
+    fill="none"
+    stroke="var(--steam-colour)"
+    stroke-width="3"
+    stroke-linecap="round"
+  >
+
+    <path
+      id="steam-one"
+      d="M570 277 Q556 265 570 250 Q583 235 570 220"
+    />
+
+    <path
+      id="steam-two"
+      d="M590 277 Q603 260 590 242"
+    />
+
+  </g>
+
+
+  <!-- Plant -->
+
+  <g id="plant">
+
+    <path
+      id="plant-pot"
+      d="M662 310 H712 L704 355 H670 Z"
+      fill="var(--plant-pot-colour)"
+    />
+
+    <g id="plant-leaves">
+
+      <path
+        id="plant-leaf-one"
+        d="M686 310 Q645 269 653 250 Q678 257 686 310 Z"
+        fill="var(--leaf-one-colour)"
+      />
+
+      <path
+        id="plant-leaf-two"
+        d="M686 310 Q726 249 739 269 Q723 292 686 310 Z"
+        fill="var(--leaf-two-colour)"
+      />
+
+      <path
+        id="plant-leaf-three"
+        d="M686 310 Q668 244 687 231 Q707 260 686 310 Z"
+        fill="var(--leaf-three-colour)"
+      />
+
+    </g>
+
+  </g>
+
+</svg>

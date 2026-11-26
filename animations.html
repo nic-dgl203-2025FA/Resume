@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animations | Karamdeep Singh</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body class="resume animations-page">
+    <!-- Navigation -->
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="index.html" class="site-logo">KS</a>
+
+        <input
+          type="checkbox"
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-label="Show navigation menu"
+        />
+
+        <label
+          for="nav-toggle"
+          class="nav-toggle-label"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+        </label>
+
+        <ul class="nav-links">
+          <li>
+            <a href="resume.html">Resume</a>
+          </li>
+
+          <li>
+            <a href="projects.html">Projects</a>
+          </li>
+
+          <li>
+            <button
+              type="button"
+              class="btn nav-contact contact-btn"
+              popovertarget="contact-popover"
+            >
+              Contact
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contact Popover -->
+    <article id="contact-popover" popover>
+      <div class="contact-card">
+        <img
+          src="images/karam.jpg"
+          alt="Photo of Karamdeep Singh"
+          class="contact-photo"
+        />
+
+        <div class="contact-info">
+          <h2>Karamdeep Singh</h2>
+
+          <p class="contact-role">Digital Design + Development Student</p>
+
+          <p class="contact-bio">
+            I am a Digital Design and Development student. I enjoy creating
+            websites and learning new skills.
+          </p>
+
+          <p class="contact-email">
+            <a href="mailto:ksingh86@northislandcollege.ca">
+              ksingh86@northislandcollege.ca
+            </a>
+          </p>
+
+          <p class="contact-phone">
+            Phone:
+            <a href="tel:5794839126">5794839126</a>
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="contact-close"
+          popovertarget="contact-popover"
+          popovertargetaction="hide"
+        >
+          Close
+        </button>
+      </div>
+    </article>
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="content-wrapper">
+        <h1>CSS Animations</h1>
+        <h2>Shapes, Filters and Blend Modes</h2>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content-wrapper">
+      <section class="resume-section">
+        <h2>My Animation Showcase</h2>
+
+        <p>
+          This page showcases three CSS animation techniques. I am exploring how
+          shapes, filters, and blend modes can make websites more interactive
+          and engaging.
+        </p>
+
+        <div class="animation-grid">
+          <!-- Animation 1 -->
+          <article class="animation-card">
+            <h3>1. Clip-Path Animation</h3>
+
+            <div
+              class="animation-stage clip-stage"
+              role="img"
+              aria-label="Green shape morphing between a triangle, square and diamond"
+            >
+              <div class="clip-shape"></div>
+            </div>
+
+            <p>
+              This animation changes a geometric shape using CSS clip-path and
+              keyframes.
+            </p>
+
+            <p class="animation-technique">Technique: CSS clip-path</p>
+          </article>
+
+          <!-- Animation 2 -->
+          <article class="animation-card">
+            <h3>2. Filter Animation</h3>
+
+            <div
+              class="animation-stage filter-stage"
+              role="img"
+              aria-label="Green circular shape"
+            >
+              <div class="filter-shape"></div>
+            </div>
+
+            <p>
+              This circle will use CSS filters to change colour and brightness.
+            </p>
+
+            <p class="animation-technique">Technique: CSS filter</p>
+          </article>
+
+          <!-- Animation 3 -->
+          <article class="animation-card">
+            <h3>3. Blend Mode Animation</h3>
+
+            <div
+              class="animation-stage blend-stage"
+              role="img"
+              aria-label="Three overlapping coloured circles"
+            >
+              <div class="blend-shape blend-one"></div>
+              <div class="blend-shape blend-two"></div>
+              <div class="blend-shape blend-three"></div>
+            </div>
+
+            <p>
+              These overlapping circles will use mix-blend-mode to create colour
+              effects.
+            </p>
+
+            <p class="animation-technique">Technique: mix-blend-mode</p>
+          </article>
+        </div>
+
+        <p class="animation-back">
+          <a href="projects.html" class="btn"> Back to Projects </a>
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 by Karamdeep Singh</p>
+
+      <ul class="socials">
+        <li>
+          <a href="#" aria-label="YouTube">
+            <img src="images/icon-logo-youtube.png" alt="YouTube" />
+          </a>
+        </li>
+
+        <li>
+          <a href="#" aria-label="Portfolio">
+            <img src="images/icon-logo-ko-fi.png" alt="Portfolio" />
+          </a>
+        </li>
+
+        <li>
+          <a href="#" aria-label="Medium">
+            <img src="images/icon-logo-medium.png" alt="Medium" />
+          </a>
+        </li>
+
+        <li>
+          <a href="#" aria-label="Instagram">
+            <img src="images/icon-logo-instagram.png" alt="Instagram" />
+          </a>
+        </li>
+
+        <li>
+          <a href="#" aria-label="LinkedIn">
+            <img src="images/icon-logo-linkedin.png" alt="LinkedIn" />
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://x.com/karam_sher_gill"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+          >
+            <img src="images/icon-logo-twitter.png" alt="Twitter" />
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

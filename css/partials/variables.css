@@ -1,0 +1,180 @@
+
+/* ========================================
+   Custom Properties
+======================================== */
+
+:root {
+
+  /* Typography */
+
+  --font-body: "Open Sans", sans-serif;
+  --font-heading: "Caveat", cursive;
+
+
+  /* Colour Palette */
+
+  --neutral: oklch(50% 0.02 150);
+
+  --neutral-1: oklch(from var(--neutral) 98% c h);
+  --neutral-2: oklch(from var(--neutral) 90% c h);
+  --neutral-3: oklch(from var(--neutral) 80% c h);
+  --neutral-4: oklch(from var(--neutral) 70% c h);
+  --neutral-5: oklch(from var(--neutral) 60% c h);
+  --neutral-6: oklch(from var(--neutral) 50% c h);
+  --neutral-7: oklch(from var(--neutral) 40% c h);
+  --neutral-8: oklch(from var(--neutral) 30% c h);
+  --neutral-9: oklch(from var(--neutral) 20% c h);
+
+  --accent-green: oklch(56% 0.11 150);
+  --accent-beige: oklch(75% 0.04 70);
+  --accent-dark: oklch(43% 0.09 150);
+
+  --white: oklch(100% 0 0);
+  --black: oklch(0% 0 0);
+
+  --card-background: oklch(100% 0 0);
+  --header-background: oklch(93% 0.025 150);
+
+  --transparent: oklch(0% 0 0 / 0);
+
+  --content-background: oklch(100% 0 0 / 0.88);
+
+  --backdrop-colour: oklch(0% 0 0 / 0.55);
+
+
+  /* Shadows */
+
+  --shadow-light: oklch(0% 0 0 / 0.12);
+
+  --shadow-medium: oklch(0% 0 0 / 0.18);
+
+  --shadow-dark: oklch(0% 0 0 / 0.25);
+
+  --text-shadow-colour: oklch(0% 0 0 / 0.15);
+
+  --card-shadow:
+    0 0.25rem 1rem
+    oklch(20% 0.02 150 / 0.08);
+
+  --card-hover-shadow:
+    0 0.5rem 1.5rem
+    oklch(20% 0.02 150 / 0.14);
+
+  --button-shadow:
+    0 0.4rem 0.9rem
+    var(--shadow-medium);
+
+
+  /* Layout */
+
+  --content-max-size: 56.25rem;
+
+  --wide-content-max-size: 68.75rem;
+
+
+  /* Spacing */
+
+  --space-xs: 0.5rem;
+
+  --space-sm: 0.75rem;
+
+  --space-md: 1rem;
+
+  --space-lg: 1.25rem;
+
+  --space-xl: 1.5rem;
+
+  --space-xxl: 2rem;
+
+  --section-spacing: clamp(2rem, 5vi, 3.5rem);
+
+
+  /* Border Radius */
+
+  --radius-small: 0.25rem;
+
+  --radius-medium: 0.5rem;
+
+  --radius-large: 0.625rem;
+
+  --radius-card: 0.875rem;
+
+
+  /* Transitions */
+
+  --button-transition: 0.25s ease;
+
+  --nav-transition: 0.3s ease;
+
+  --card-transition: 0.3s ease;
+
+
+  /* CSS Animation Timing */
+
+  --logo-animation-duration: 1s;
+
+  --filter-animation-duration: 4s;
+
+  --blend-animation-duration: 5s;
+
+
+  /* SVG Animation Timing */
+
+  --svg-animation-delay: 1s;
+
+  --fan-animation-duration: 0.9s;
+
+
+  /* Airflow Animation */
+
+  --airflow-duration: 1.2s;
+
+  --airflow-delay: 0.15s;
+
+  --airflow-stagger: 0.2s;
+
+
+  /* Notebook Animation */
+
+  --page-one-duration: 1.2s;
+
+  --page-two-duration: 1s;
+
+  --notebook-delay: 0.6s;
+
+  --notebook-stagger: 0.2s;
+
+
+  /* Coffee Steam Animation */
+
+  --steam-duration: 3s;
+
+  --steam-delay: 1s;
+
+  --steam-stagger: 0.8s;
+
+
+  /* Plant Animation */
+
+  --plant-delay: 1.2s;
+
+  --plant-stagger: 0.25s;
+
+  --leaf-one-duration: 2.2s;
+
+  --leaf-two-duration: 2.5s;
+
+  --leaf-three-duration: 2.8s;
+
+
+  /* SVG Showcase Layout */
+
+  --svg-radius: 0.75rem;
+
+  --svg-spacing: clamp(0.75rem, 2vi, 1.5rem);
+
+  --svg-shadow:
+    0 0.4rem 1.25rem
+    oklch(20% 0.02 150 / 0.12);
+
+}
